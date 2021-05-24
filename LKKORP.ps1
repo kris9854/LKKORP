@@ -18,4 +18,4 @@ $Host.PrivateData.ProgressForegroundColor = 'Black'
 $Host.PrivateData.ProgressBackgroundColor = 'Yellow'
 $ErrorActionPreference = 'Continue'
 Clear-Host
-pwsh.exe -NoExit -ExecutionPolicy Bypass -command ". .\MainScript.ps1"
+PowerShell.exe -NoExit -ExecutionPolicy Bypass -command ". .\MainScript.ps1"
