@@ -40,7 +40,7 @@ Add-Type -AssemblyName System.Windows.Forms     #Can be created with windows for
 Clear-Host                          #Clears the powershell windows messages
 #Endregion DLL's and System Objects
 #Region Script Specific variables.
-[string]$ScriptName = 'KR_Template'      #Name of your script
+[string]$ScriptName = 'LKKORP'      #Name of your script
 $VersionTemplate = '3.0.1'          #Template Script Version
 $VersionScript = '1.0.0'            #Script Version
 [string]$ScriptAuthor = 'Kristian'   #Script Author
