@@ -16,11 +16,15 @@ $Global:ErrorTextColour = 'red'
 
 ##
 #Svendeproeve
-[string]$Global:ForegroundColour = 'magenta'
-[string]$global:TxtColour = 'Cyan';
-[string]$global:ConfirmColour = 'yellow';
-[string]$global:SuccessColour = 'Green';
-[string]$Global:StandardVMParentDisk = 'c:\Server\Disk\WIN2019\LKKORP-ParentDisk.vhdx'
+[string]$Global:ForegroundColour = 'Cyan'
+[string]$Global:TxtColour = 'Cyan';
+[string]$Global:ConfirmColour = 'yellow';
+[string]$Global:SuccessColour = 'Green';
+
+#Hyper-v Specific
+[string]$Global:StandardVMParentDisk = 'D:\Server\Disk\WIN2019\LKKORP-ParentDisk.vhdx'
 [int]$Global:StandardVMGen = 2
-[int]$Global:StandarServerVlan = 10
-[int]$Global:StandardClientVlan = 20
+
+[int]$Global:StandardMNGVlan = 2
+[int]$Global:StandarServerVlan = 4
+[int]$Global:StandardClientVlan = 6
