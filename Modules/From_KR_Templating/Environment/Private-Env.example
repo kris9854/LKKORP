@@ -1,8 +1,0 @@
-<#
-This is a Privat Env file. This isn't being uploaded to your repository
-#>
-#ENV FTP 
-$FTPUser = ''
-$FTPUserPasswordTxtFile = ".txt"
-$FTPUserAESPasswordKey = ".key"
-$Global:FTPSRVAddress = ''
