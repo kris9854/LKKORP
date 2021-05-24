@@ -48,7 +48,7 @@ $VersionScript = '1.0.0'            #Script Version
 $host.ui.RawUI.WindowTitle = "$ScriptName"
 #Region variables and Global Values
 $global:ScriptPath = Split-Path $script:MyInvocation.MyCommand.Path
-[datetime]$Date = Get-Date -Format "dd-MM-yy-HHmm"
+$Date = Get-Date -Format "dd-MM-yy-HHmm"
 [datetime]$startDTM = (Get-Date) # Get Start Time
 #Endregion variables and Global Values
 
