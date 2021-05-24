@@ -29,7 +29,7 @@ function New-LKKORPUserPC {
     )
         
     begin {
-
+        $BootLocation = "Boot\x64\Images\LiteTouchPE_x64.wim"
         # Cleaning the GUID or MAC to be ready for the WDS CLIENT implementation
         if (-not $MacAddress) {
             if (-not $PC_GUID) {
@@ -65,7 +65,7 @@ function New-LKKORPUserPC {
     }
     
     process {
-        New-WdsClient -DeviceID "$DeviceID" -DeviceName "$Hostname" -BootImagePath "Boot\x64\Images\LiteTouchPE_x64.wim" -JoinDomain $true -OU "$JoinOUPath"
+        New-WdsClient -DeviceID "$DeviceID" -DeviceName "$Hostname" -BootImagePath "$BootLocation" -JoinDomain $true -OU "$JoinOUPath"
     }
     
     end {

@@ -44,7 +44,7 @@ function Create-ServerEnv {
         
     }
 }
-function Create-CustomVM {
+function Create-LKKORPVM {
     <#
    .SYNOPSIS
    Easy way to create VM's based on a diff disk

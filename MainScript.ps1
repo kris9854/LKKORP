@@ -93,4 +93,6 @@ else {
 # Used to call functions from imported modules
 Get-ScriptBanner
 
+Write-Host "Create-LKKORPVM" -ForegroundColor $Global:writehostsuccessfullcolour
+Write-Host "New-LKKORPUserPC" -ForegroundColor $Global:writehostsuccessfullcolour
 #Endregion Main
