@@ -1,0 +1,28 @@
+<#
+Envvariables
+Here you can create global variable to be used by the Global
+
+Please remove the .example.txt from file name in order to activate the ENV file
+#>
+#####################
+#Colour
+$Global:writehostsuccessfullcolour = 'green'
+$Global:BannerColour = 'cyan'
+$Global:TextColour = 'cyan'
+$Global:ErrorTextColour = 'red'
+# Images
+#####################
+#ENV FTP 
+$FTPUser = ''
+$FTPUserPasswordTxtFile = ".txt"
+$FTPUserAESPasswordKey = ".key"
+$RetriveFTPPassword = Get-Content "$FTPUserPasswordTxtFile" | ConvertTo-SecureString -Key (Get-Content "$FTPUserAESPasswordKey") | ConvertFrom-SecureString -AsPlainText
+$Global:FTPUserPassword = "$RetriveFTPPassword"
+
+$Global:FTPSRVAddress = ''
+
+#ENV DNS
+
+#ENV DHCP
+
+#ENC Hyperv
