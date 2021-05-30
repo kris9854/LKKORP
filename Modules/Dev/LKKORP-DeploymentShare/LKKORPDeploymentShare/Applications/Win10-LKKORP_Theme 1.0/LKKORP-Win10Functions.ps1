@@ -17,10 +17,10 @@ function Change-Win10LockScreen {
     Remove-Item C:\Windows\Web\Screen\*.*
 
     #Copy our wallpapers
-    Copy-Item $PSScriptRoot\*.* C:\Windows\Web\Screen
+    Copy-Item $PSScriptRoot\screen\*.* C:\Windows\Web\Screen
 }
 
-function Change-Wallpaper {
+function Change-Win10Wallpaper {
     param ()
     #inspiration link https://ccmexec.com/2015/08/replacing-default-wallpaper-in-windows-10-using-scriptmdtsccm/
     #Take ownership
@@ -39,3 +39,6 @@ function Change-Wallpaper {
 
 
 }
+
+Change-Win10LockScreen
+Change-Win10Wallpaper
