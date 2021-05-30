@@ -17,7 +17,7 @@ function Change-Win10LockScreen {
     Remove-Item C:\Windows\Web\Screen\*.*
 
     #Copy our wallpapers
-    Copy-Item $PSScriptRoot\screen\*.* C:\Windows\Web\Screen
+    Copy-Item $PSScriptRoot\Lockscreen\Screen\*.* C:\Windows\Web\Screen
 }
 
 function Change-Win10Wallpaper {
@@ -33,11 +33,8 @@ function Change-Win10Wallpaper {
     Remove-Item c:\windows\WEB\wallpaper\Windows\img0.jpg
     Remove-Item C:\Windows\Web\4K\Wallpaper\Windows\*.*
     #Copy our wallpapers
-    Copy-Item $PSScriptRoot\img0.jpg c:\windows\WEB\wallpaper\Windows\img0.jpg
-    Copy-Item $PSScriptRoot\4k\*.* C:\Windows\Web\4K\Wallpaper\Windows
-
-
-
+    Copy-Item $PSScriptRoot\Wallpaper\img0.jpg c:\windows\WEB\wallpaper\Windows\img0.jpg
+    Copy-Item $PSScriptRoot\Wallpaper\4k\*.* C:\Windows\Web\4K\Wallpaper\Windows
 }
 
 Change-Win10LockScreen
