@@ -4,7 +4,7 @@ function Create-ServerEnv {
         # Path
         [Parameter(Mandatory = $false)]
         [string]
-        $VMPath = "D:",
+        $VMPath = "C:",
 
         # Name Of the Switch needed for the VM (should be a trunked virtual interface)
         [Parameter(Mandatory = $false)]
@@ -18,15 +18,15 @@ function Create-ServerEnv {
         $VirtualMachinePath = (Get-VMHost).VirtualMachinePath
         $VmNetworkAdapter = (Get-VMSwitch -Name "$SwitchName").Name
 
-        if ((-not [bool](Get-Item -Path 'D:\Server' -ErrorAction SilentlyContinue)) -or
-            (-not [bool](Get-Item -Path 'D:\Server\Disk' -ErrorAction SilentlyContinue)) -or
-            (-not [bool](Get-Item -Path 'D:\Server\VM' -ErrorAction SilentlyContinue))) {
+        if ((-not [bool](Get-Item -Path "$VMPath\Server" -ErrorAction SilentlyContinue)) -or
+            (-not [bool](Get-Item -Path "$VMPath\Server\Disk" -ErrorAction SilentlyContinue)) -or
+            (-not [bool](Get-Item -Path "$VMPath\Server\VM" -ErrorAction SilentlyContinue))) {
                 
-            New-Item -Path $Path -Name 'Server'
+            New-Item -Path $Path -Name 'Server' -ItemType Directory
             $VMPath = $VMPath + '\server'
-            New-Item -Path $VMPath -Name 'Disk'
+            New-Item -Path $VMPath -Name 'Disk' -ItemType Directory
             $VMDiskPath = $VMPath + '\Disk'
-            New-Item -Path $VMPath -Name 'VM'
+            New-Item -Path $VMPath -Name 'VM' -ItemType Directory
             $VMPath = $VMPath + '\VM'
         }  
     }
@@ -171,9 +171,7 @@ function Create-LKKORPVM {
         }
     }
     
-    end {
-        
-    }
+    end { }
 }
 function GLobalVars {
     [string]$Global:ForegroundColour = 'cyan'
@@ -181,14 +179,13 @@ function GLobalVars {
     [int]$Global:StandardVMGen = 2
     [int]$Global:StandarServerVlan = 4
     [int]$Global:StandardClientVlan = 6
-    $Global:writehostsuccessfullcolour = 'green'
-    $Global:BannerColour = 'cyan'
-    $Global:TextColour = 'cyan'
-    $Global:ErrorTextColour = 'red'
+    [string]$Global:writehostsuccessfullcolour = 'green'
+    [string]$Global:BannerColour = 'cyan'
+    [string]$Global:TextColour = 'cyan'
+    [string]$Global:ErrorTextColour = 'red'
     [string]$Global:ForegroundColour = 'cyan'
     [string]$global:TxtColour = 'Cyan';
     [string]$global:ConfirmColour = 'yellow';
     [string]$global:SuccessColour = 'Green';
-
 }
 GLobalVars
