@@ -175,7 +175,7 @@ function Create-LKKORPVM {
 }
 function GLobalVars {
     [string]$Global:ForegroundColour = 'cyan'
-    [string]$Global:StandardVMParentDisk = 'D:\Server\Disk\WIN2019\VM-Parent01.vhdx'
+    [string]$Global:StandardVMParentDisk = 'C:\Server\Disk\WIN2019\VM-Parent01.vhdx'
     [int]$Global:StandardVMGen = 2
     [int]$Global:StandarServerVlan = 4
     [int]$Global:StandardClientVlan = 6
@@ -188,4 +188,6 @@ function GLobalVars {
     [string]$global:ConfirmColour = 'yellow';
     [string]$global:SuccessColour = 'Green';
 }
+
+#Call Functions
 GLobalVars
