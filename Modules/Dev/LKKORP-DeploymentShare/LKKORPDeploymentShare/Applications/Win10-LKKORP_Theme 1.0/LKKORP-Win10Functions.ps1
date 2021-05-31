@@ -30,10 +30,10 @@ function Change-Win10Wallpaper {
     icacls c:\windows\WEB\wallpaper\Windows\img0.jpg /Grant 'System:(F)'
     icacls C:\Windows\Web\4K\Wallpaper\Windows\*.* /Grant 'System:(F)'
     # Remove originals
-    Remove-Item c:\windows\WEB\wallpaper\Windows\img0.jpg
-    Remove-Item C:\Windows\Web\4K\Wallpaper\Windows\*.*
+    Remove-Item c:\windows\WEB\wallpaper\Windows\img0.jpg -Force
+    Remove-Item C:\Windows\Web\4K\Wallpaper\Windows\*.* -Force
     #Copy our wallpapers
-    Copy-Item $PSScriptRoot\Wallpaper\img0.jpg c:\windows\WEB\wallpaper\Windows\img0.jpg
+    Copy-Item $PSScriptRoot\Wallpaper\LKKORP.jpg c:\windows\WEB\wallpaper\Windows\LKKORP.jpg
     Copy-Item $PSScriptRoot\Wallpaper\4k\*.* C:\Windows\Web\4K\Wallpaper\Windows
 }
 
