@@ -4,9 +4,9 @@
     <id>putty64</id>
     <version>0.75</version>
     <title>Putty64 (Install)</title>
-    <authors>__REPLACE_AUTHORS_OF_SOFTWARE_COMMA_SEPARATED__</authors>
-    <owners>__REPLACE_AUTHORS_OF_SOFTWARE_COMMA_SEPARATED__</owners>
-    <projectUrl>https://_Software_Location_REMOVE_OR_FILL_OUT_</projectUrl>
+    <authors>Putty</authors>
+    <owners>Kristian (internally)</owners>
+    <projectUrl>https://www.putty.org/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This is a software for connecting using protocols like SSH, telnet and Serial cables</description>
     <summary>This is a software for connecting using protocols like SSH, telnet and Serial cables</summary>

@@ -35,7 +35,7 @@ Function Write-Log {
 [string]$LogFileLocation = 'C:\Projects\RoboCopy\Log\RoboCopy.log'
 #Call Robocopy with parameters 
 
-Robocopy.exe $SourcePath $DestinationPath /E /TEE /ZB /MIR /DCOPY:DAT /COPYALL /R:5 /W:10 /LOG:$LogFileLocation
+Robocopy.exe $SourcePath $DestinationPath /E /TEE /xd DfsrPrivate /ZB /MIR /DCOPY:DAT /COPYALL /R:5 /W:10 /LOG:$LogFileLocation
 
 <#
 Attributes justification:
