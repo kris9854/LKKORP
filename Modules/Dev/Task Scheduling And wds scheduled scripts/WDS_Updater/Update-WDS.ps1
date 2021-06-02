@@ -21,3 +21,5 @@ function Rearm-WMI {
     
     
 }
+
+Choco install {{Pakkenavn}}.nupkg -y
