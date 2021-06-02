@@ -30,8 +30,8 @@ function Create-LKKORPDHCPScope {
         $dhcpserver = "$env:computername",
 
         # Csv Import location
-        [Parameter(AttributeValues)]
-        [ParameterType]
+        [Parameter(Mandatory = $false)]
+        [string]
         $CsvImportPath = '.\DHCPScopes.csv'
     )
     
@@ -41,7 +41,7 @@ function Create-LKKORPDHCPScope {
     
     process {
         foreach ($CSVFile in $CsvImport) {
-            # Make $null
+            # Make $null Init Variables 
             [string]$scopename = $null       #name of the scope
             [string]$ScopeID = $null           #Scope Ip
             # SPlitting Part
@@ -61,6 +61,7 @@ function Create-LKKORPDHCPScope {
             #Define Variables based on the imported CSV
             [string]$scopename = $CSVFile.Scopename       #name of the scope
             [string]$ScopeID = $CSVFile.NetworkID           #Scope Ip
+            Write-Host -Object "Creating $ScopeID with $ScopeName" -ForegroundColor Yellow
             # SPlitting Part
             $FirstOctet = $ScopeID.split('.')[0]
             $SecondOctet = $ScopeID.split('.')[1]
@@ -76,7 +77,7 @@ function Create-LKKORPDHCPScope {
             # Creating scope
             Add-DHCPServerv4Scope -EndRange $endrange -Name $scopename -StartRange $startrange -SubnetMask $subnetmask -State Active -LeaseDuration $Lease
             # Adding router
-            Set-DHCPServerv4OptionValue -ScopeId $scopeID -Router $router -lease
+            Set-DHCPServerv4OptionValue -ScopeId $scopeID -Router $router
         }
     }
     
