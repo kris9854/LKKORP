@@ -86,5 +86,5 @@ function Create-LKKORPDHCPScope {
         
     }
 }
-
+Write-host "Function: Create-LKKORPDHCPScope" -ForegroundColor Yellow
 #Create-LKKORPDHCPScope
