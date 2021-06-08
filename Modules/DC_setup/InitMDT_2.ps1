@@ -1,13 +1,3 @@
-# https://docs.microsoft.com/en-us/windows/deployment/deploy-windows-mdt/create-a-windows-10-reference-image
-#Init the MDT Server
-function InitMDT {
-    param ()
-    Write-Host "Have you installed Windows ADK? If Not exit this"
-    Read-Host
-
-}
-# Region Script For setting up WDS server with currect settings
-
 function New-LKKORPWDS {
     param (
         # Server Name Defaults to local
@@ -32,7 +22,9 @@ function New-LKKORPWDS {
     )
     # Region Install WDS locally
     Install-WindowsFeature -Name WDS -IncludeManagementTools
+
     WDSUTIL /Verbose /Progress /Initialize-Server /Server:"$Server" /RemInst:"$ReminstallationPath"
+
     WDSUTIL /Set-Server /AnswerClients:All
     # Endregion Install WDS locally
 
@@ -42,11 +34,17 @@ function New-LKKORPWDS {
         Name         = "$SMBShareName" 
         Path         = "$DeploymentShare" 
         ChangeAccess = 'LKKORP\Share-Access-WDS-RW'
-        ReadAccess   = 'LKKORP\SA-MDT, LKKORP\Share-Access-WDS-RW' 
-        FullAccess   = 'LKKORP\Share-Access-WDS-RW' -
 
     }
-    New-SmbShare @SMBShareArguments
+    New-SmbShare @SMBShareArguments 
+
+    $GrantSMBARG = @{
+        Name        = "$SMBShareName" 
+        AccessRight = "Read" 
+        
+    }
+    Grant-SmbShareAccess @GrantSMBARG -AccountName ‘SA-MDT’
+    Grant-SmbShareAccess @GrantSMBARG -AccountName ‘Share-Access-WDS-RW'
     # Endregion Create local Deployment Share
     # Endregion Script For setting up WDS server with currect settings
 }
