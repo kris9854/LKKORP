@@ -51,4 +51,5 @@ function New-LKKORPWDS {
     # Endregion Create local Deployment Share
     # Endregion Script For setting up WDS server with currect settings
 }
+#Call Function
 New-LKKORPWDS
