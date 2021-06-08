@@ -37,7 +37,6 @@ function New-LKKORPWDS {
     # Endregion Install WDS locally
 
     # Region Create local Deployment Share
-
     New-Item -Path "$DeploymentShare" -ItemType directory
     $SMBShareArguments = @{
         Name         = "$SMBShareName" 
