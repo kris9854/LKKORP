@@ -23,7 +23,7 @@ function New-LKKORPWDS {
     # Region Install WDS locally
     Install-WindowsFeature -Name WDS -IncludeManagementTools
 
-    WDSUTIL /Verbose /Progress /Initialize-Server /Server:"$Server" /RemInst:"$ReminstallationPath"
+    WDSUTIL /Verbose /Progress /Initialize-Server /RemInst:"$ReminstallationPath"
 
     WDSUTIL /Set-Server /AnswerClients:All
     # Endregion Install WDS locally
