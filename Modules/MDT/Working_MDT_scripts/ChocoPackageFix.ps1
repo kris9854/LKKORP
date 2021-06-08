@@ -8,6 +8,8 @@ function Add-source {
     # Set the source feed/repositorie to LKKORP-Internal
     Choco source add -n 'LKKORP-Internal' -s=http://proget.lkkorp.local/nuget/LKKORP-Internal/ -y
 
+    #allow empty checksums
+    choco feature allowempyuchecksums
     # Used to fix the chocolately installation 
 
 }
