@@ -54,7 +54,7 @@ Dansk: Skrevet til min svendeproeve.
         #Region Ip address
         Write-Host -Object 'IP address: ' -ForegroundColor "$TxtColour" -NoNewline;
         [System.Net.IPAddress]$IP = Read-Host;
-        $DNS = "10.0.10.100" #Standard
+        $DNS = "10.0.4.100" #Standard
         [System.Net.IPAddress]$DefaultGateway = "10.$($IP.ToString().split('.')[1]).$($IP.ToString().split('.')[2]).1";
         $CIDR = '24';
         $NetworkCard = (Get-NetAdapter | Where-Object { $_.Name -eq 'Ethernet' }).InterfaceAlias
