@@ -46,16 +46,16 @@ Dansk: Skrevet til min svendeproeve.
         #Endregion Credential Creation for Domain Join
 
         #Region VM NAME
-        Write-Host -Object 'VM NAME: ' -ForegroundColor "$TxtColour" -NoNewline;
+        Write-Host -Object 'VM fullNAM (Eeks DKHER-DHCP0001): ' -ForegroundColor "$TxtColour" -NoNewline;
         $VMName = Read-Host;
-        $VmName = "$($DomainToJoin.Split('.')[0])-$VMName";
+        $VmName = "$VMName";
         #Endregion VM NAME 
 
         #Region Ip address
         Write-Host -Object 'IP address: ' -ForegroundColor "$TxtColour" -NoNewline;
         [System.Net.IPAddress]$IP = Read-Host;
         $DNS = "10.0.10.100" #Standard
-        [System.Net.IPAddress]$DefaultGateway = "10.0.$($IP.ToString().split('.')[2]).1";
+        [System.Net.IPAddress]$DefaultGateway = "10.$($IP.ToString().split('.')[1]).$($IP.ToString().split('.')[2]).1";
         $CIDR = '24';
         $NetworkCard = (Get-NetAdapter | Where-Object { $_.Name -eq 'Ethernet' }).InterfaceAlias
         #Endregion Ip address
