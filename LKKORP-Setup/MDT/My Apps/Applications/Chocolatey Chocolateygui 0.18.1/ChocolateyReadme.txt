@@ -1,0 +1,1 @@
+Removed chocolatey as a dependency because we have set the correct package position elsewhere
