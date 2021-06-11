@@ -2,7 +2,18 @@
 # Applications
 
 This setup is used for a PoC during my examination.
+<br />
 Please use this with caution.
+
+install in this order:
+<br />
+1. Chocolatey.org Chocolatey 0.10.15
+<br />
+2. Chocolatey chocolatey-core.extension 1.3.5.1
+<br />
+3. Microsoftt DotNet 4.5.2 4.5.2.20140902
+<br />
+4. Chocolatey Chocolateygui 0.18.1
 
 ## Chocolatey.org Chocolatey 0.10.15
 
