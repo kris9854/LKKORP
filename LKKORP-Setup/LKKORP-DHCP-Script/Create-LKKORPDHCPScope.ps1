@@ -12,7 +12,7 @@ function Create-LKKORPDHCPScope {
     
     .PARAMETER CsvImportPath
     Parameter description
-    THe path to with the csv file is located defaults to DHCPScopes.csv in same folder.
+    The path to with the csv file is located defaults to DHCPScopes.csv in same folder.
     csv headers: 
     Scopename;NetworkID
     
@@ -29,12 +29,12 @@ function Create-LKKORPDHCPScope {
     [CmdletBinding()]
     param (
         # DHCP Server
-        [Parameter(Mandatory = $false)]
+        [Parameter(Mandatory = $false, HelpMessage = "Please enter the DHCP Server Name")]
         [string]
         $dhcpserver = "$env:computername",
 
         # Csv Import location
-        [Parameter(Mandatory = $false)]
+        [Parameter(Mandatory = $false, HelpMessage = "Please enter the CSV from where data should be read")]
         [string]
         $CsvImportPath = '.\DHCPScopes.csv'
     )
