@@ -19,12 +19,12 @@ function Create-LKKORPDHCPScope {
     .EXAMPLE
      Create-LKKORPDHCPScope 
      <- Creates a DHCP scope based on values from a CSV file ->
+
+    
+    .NOTES
      <- CSV Explaination ->
      <- SCOPENAME -> The name of the scope given to the scope
      <- NETWORKID -> The Network ID exs: 10.0.100.0 - subnet will be set througnh script
-    
-    .NOTES
-    General notes
     #>
     [CmdletBinding()]
     param (
